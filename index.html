@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>SITE OF THE DAY</title>
+</head>
+<body>
+    
+<div class="wrap">
+
+<header class="header">
+
+<div class="logo"><a href=""><img src="./img/logo.png" alt=""></a></div>
+    <div class="search">
+        <i class="fas fa-search"></i>
+        <input class="search-bar__input" type="text" placeholder="search in inspiration">
+    </div>
+        <div class="login">
+            <a href="" class="link">
+                <p class="log-in">Log in</p>
+                <p class="log-in">sign up</p>
+            </a>
+        </div>
+            <div class="pro">
+                <button class="btn01">Be Pro</button>
+                <button class="btn02">Submit Website</button>
+            </div>
+
+</header>
+
+<div class="h2_center">
+    <p class="p">SITE OF THE DAY</p>
+    </div>
+
+<section class="section01">
+    <img src="./img/section_img.png" alt="" class="img_scrollevent" >
+        </section>
+
+</div>
+<section class="section02">
+    <div class="scroll_word"><h1 class="h1_1">FOLLOW</h1></div>
+        <div class="scroll_words"><h1 class="h1">WHAT'S BRAND NEW</h1></div>
+            <div class="scroll_words"><h1 class="h1">IN DIGITAL DESIGN.</h1></div>
+                <div class="scroll_words"><h1 class="h1">Learn From The best instructors.</h1></div>
+                    </section>
+
+<button id="topBtn">Top</button>
+
+<script>
+
+    //이미지 이벤트
+const outputElem = document.querySelector('.output');
+const img_scrollevent = document.querySelector('.img_scrollevent')
+function showValue() {
+
+let posY = img_scrollevent.getBoundingClientRect().top 
+    outputElem.innerHTML = posY;
+    if (posY < window.innerHeight * 0.2){
+        img_scrollevent.classList.add('zoom');
+    }         
+    else{
+        img_scrollevent.classList.remove('zoom');
+    }
+    console.log()
+}
+
+window.addEventListener('scroll', function(){
+    showValue();
+});
+
+
+// 탑 버튼 
+function scrollToTop() {
+
+
+const scrollY = window.scrollY;
+
+
+    if (scrollY > 0) {
+        requestAnimationFrame(scrollToTop);
+
+        window.scrollTo(0, scrollY - scrollY / 35); 
+    }
+    const topBtn = document.getElementById("topBtn");
+
+    }
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 450) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    });
+
+    topBtn.addEventListener("click", scrollToTop);
+
+    window.addEventListener('scroll', function() {
+    var img_scrollevent = document.querySelector
+})
+
+//텍스트 스크롤 애니메이션 구현
+    let observer =new IntersectionObserver((e) =>{
+        e.forEach((박스)=>{
+            if(박스.isIntersecting){
+                박스.target.style.opacity = 1;
+                박스.target.style.transform = 'rotate(0deg)';
+            }else{
+                박스.target.style.opacity = 0;
+            }
+        })
+    });
+
+    let div =document.querySelectorAll('div.scroll_words')
+    observer.observe(div[0])
+    observer.observe(div[1])
+    observer.observe(div[2])
+    observer.observe(div[3])
+
+
+</script>
+</body>
+
+</html>
